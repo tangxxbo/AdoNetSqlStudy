@@ -1,0 +1,7 @@
+C:\Users\user\source\repos\tangxxbo\AdoNetSqlStudy\AdoNetSqlStudy\AdoNetSqlStudy\bin\Debug\AdoNetSqlStudy.exe.config
+C:\Users\user\source\repos\tangxxbo\AdoNetSqlStudy\AdoNetSqlStudy\AdoNetSqlStudy\bin\Debug\AdoNetSqlStudy.exe
+C:\Users\user\source\repos\tangxxbo\AdoNetSqlStudy\AdoNetSqlStudy\AdoNetSqlStudy\bin\Debug\AdoNetSqlStudy.pdb
+C:\Users\user\source\repos\tangxxbo\AdoNetSqlStudy\AdoNetSqlStudy\AdoNetSqlStudy\obj\Debug\AdoNetSqlStudy.csprojAssemblyReference.cache
+C:\Users\user\source\repos\tangxxbo\AdoNetSqlStudy\AdoNetSqlStudy\AdoNetSqlStudy\obj\Debug\AdoNetSqlStudy.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\tangxxbo\AdoNetSqlStudy\AdoNetSqlStudy\AdoNetSqlStudy\obj\Debug\AdoNetSqlStudy.exe
+C:\Users\user\source\repos\tangxxbo\AdoNetSqlStudy\AdoNetSqlStudy\AdoNetSqlStudy\obj\Debug\AdoNetSqlStudy.pdb
