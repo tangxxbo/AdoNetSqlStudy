@@ -20,11 +20,11 @@ namespace AdoNetSqlStudy
             pm.NoUsingSelect();
             //SqlParameter("1000000");
             //SqlParameter();
-
+            SqlRead();
             //1、参数定义
             SqlParameter pa1 = new SqlParameter();
             pa1.ParameterName = "@Code";//定义参数名
-            pa1.SqlDbType = System.Data.SqlDbType.VarChar;//定义参数数据类型
+            pa1.SqlDbType = SqlDbType.VarChar;//定义参数数据类型
             pa1.Size = 50;//定义参数大小
             pa1.Value = "code";//参数值
             //2、参数定义，参数名、值
@@ -62,6 +62,49 @@ namespace AdoNetSqlStudy
 
             }
             Console.ReadKey();
+        }
+
+        private static void SqlRead() {
+            using (SqlConnection conn = new SqlConnection(connSql))
+            {
+                string sSql = "select code,name,sex from student";
+                SqlCommand cmd = new SqlCommand(sSql,conn);
+                conn.Open();
+                SqlDataReader sdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);//使用CommandBehavior会关闭所依赖的连接对象
+
+                //DataTable dt = new DataTable();
+                //dt.Load(sdr);//将数据加载到dt对象中
+                List<StudentModel> lstu = new List<StudentModel>();
+                if (sdr.HasRows)//判断读取对象是否存在
+                {
+                    int indexId = sdr.GetOrdinal("code");//获取制定列名的列序号
+                    int indexName = sdr.GetOrdinal("name");//获取制定列名的列序号
+                    int indexSex = sdr.GetOrdinal("sex");//获取制定列名的列序号
+                    int indexAddress = sdr.GetOrdinal("address");//获取制定列名的列序号
+                    int indexAge = sdr.GetOrdinal("age");//获取制定列名的列序号
+                    //string idName = sdr.GetString(0);
+
+                    while (sdr.Read())
+                    {
+                        //string codes = sdr[indexId].ToString();
+                        //string names = sdr[indexName].ToString();
+                        //string sexs = sdr[indexSex].ToString();
+                        //string addresss = sdr[indexAddress].ToString();
+                        //string ages = sdr[indexAge].ToString();
+                        //string names = sdr[idName].ToString();
+                        StudentModel sm = new StudentModel();
+                        sm.code = sdr.GetString(indexId);
+                        sm.name = sdr.GetString(indexName);
+                        sm.sex = sdr.GetInt32(indexSex);
+                        sm.address = sdr.GetString(indexAddress);
+                        sm.age = sdr.GetInt32(indexAge);
+                        lstu.Add(sm);
+                    }
+
+                }
+                sdr.Close();//如果有返回值必须的关闭
+
+            }
         }
         private static void SqlParameter() {
             using (SqlConnection conn = new SqlConnection(connSql))
